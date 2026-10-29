@@ -3,8 +3,6 @@
   connection: local
   vars:
     instances: ["mongodb", "redis", "mysql", "rabbitmq"]
-  tasks:
-  - name: create ec2 instance
     action: create
     domain_name: nirupadevops.online
     ami_id: ami-0055977a6e828a4f4
