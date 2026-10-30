@@ -22,5 +22,15 @@
       shell: /sbin/nologin
       comment: "roboshop system user"
 
+  - name: removing existing app directory
+    file:
+      path: /app
+      state: absent
+
+  - name: removing existing app directory
+    file:
+      path: /app
+      state: absent  
+
 
 
