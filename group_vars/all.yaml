@@ -1,3 +1,11 @@
 ansible_user: ec2-user
 ansible_password: DevOps321
 mongodb_host: mongodb.nirupadevops.online
+redis_host: redis.nirupadevops.online
+mysql_host: mysql.nirupadevops.online
+rabbitmq_host: rabbitmq.nirupadevops.online
+catalogue_host: catalogue.nirupadevops.online
+user_host: user.nirupadevops.online
+cart_host: cart.nirupadevops.online
+shipping_host: shipping.nirupadevops.online
+payment_host: payment.nirupadevops.online

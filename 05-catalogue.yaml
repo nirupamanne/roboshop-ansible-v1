@@ -5,7 +5,7 @@
   - name: disable default nodejs
     command: dnf module disable nodejs -y
 
-  - name: enable nodejs
+  - name: enable nodejs24
     command: dnf module enable nodejs:24 -y
 
   - name: install nodejs
@@ -22,15 +22,15 @@
       shell: /sbin/nologin
       comment: "roboshop system user"
 
-  - name: removing existing app directory
+  - name: remove existing app directory
     file:
       path: /app
       state: absent
 
-  - name: removing catalogue.zip
+  - name: remove catalogue.zip
     file:
       path: /tmp/catalogue.zip
-      state: absent 
+      state: absent
 
   - name: create app directory
     file:
@@ -39,11 +39,11 @@
 
   - name: download catalogue application
     get_url:
-      url:  https://raw.githubusercontent.com/daws-92s/roboshop-documentation/refs/heads/main/artifacts/catalogue-v4.zip
+      url: https://raw.githubusercontent.com/daws-92s/roboshop-documentation/refs/heads/main/artifacts/catalogue-v4.zip
       dest: /tmp/catalogue.zip
 
   - name: unzip catalogue
-    unarchive: 
+    unarchive:
       src: /tmp/catalogue.zip
       dest: /app
       remote_src: yes
@@ -51,7 +51,7 @@
   - name: install dependencies
     community.general.npm:
       path: /app
-
+  
   - name: copy catalogue service
     template:
       src: catalogue.service.j2
@@ -88,5 +88,3 @@
       name: catalogue
       state: restarted
       enabled: yes
-
-
