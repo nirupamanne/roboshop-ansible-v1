@@ -9,3 +9,8 @@ user_host: user.nirupadevops.online
 cart_host: cart.nirupadevops.online
 shipping_host: shipping.nirupadevops.online
 payment_host: payment.nirupadevops.online
+mysql_root_password: RoboShop@1
+shipping_db_user: shipping
+shipping_db_password: RoboShop@1
+rabbitmq_user: roboshop
+rabbitmq_password: roboshop123
